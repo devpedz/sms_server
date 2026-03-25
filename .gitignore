@@ -50,7 +50,8 @@ go.work
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -163,7 +164,7 @@ $RECYCLE.BIN/
 dist/
 tmp/
 
-/configs/*
+# /configs/*
 !/configs/*.example.*
 
 go.work*
