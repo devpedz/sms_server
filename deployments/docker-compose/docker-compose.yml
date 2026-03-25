@@ -10,14 +10,14 @@ services:
     environment:
       - DEBUG=
       - CONFIG_PATH=config.yml
-      - HTTP__LISTEN=0.0.0.0:3000
+      - HTTP__LISTEN=0.0.0.0:3030
       - DATABASE__HOST=db
       - DATABASE__PORT=3306
       - DATABASE__USER=sms
       - DATABASE__PASSWORD=sms
       - DATABASE__DATABASE=sms
     ports:
-      - "3000:3000"
+      - "3030:3030"
     volumes:
       - ../../configs/config.yml:/app/config.yml:ro
     restart: "unless-stopped"
@@ -36,14 +36,14 @@ services:
     environment:
       - DEBUG=
       - CONFIG_PATH=config.yml
-      - HTTP__LISTEN=0.0.0.0:3000
+      - HTTP__LISTEN=0.0.0.0:3030
       - DATABASE__HOST=db
       - DATABASE__PORT=3306
       - DATABASE__USER=sms
       - DATABASE__PASSWORD=sms
       - DATABASE__DATABASE=sms
     ports:
-      - "3001:3000"
+      - "3031:3030"
     volumes:
       - ../../configs/config.yml:/app/config.yml:ro
     restart: "unless-stopped"
