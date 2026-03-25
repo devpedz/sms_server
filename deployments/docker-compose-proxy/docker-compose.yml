@@ -22,7 +22,7 @@ services:
     image: umputun/reproxy:v1.1.1
     ports:
       - "8989:8080"
-      - "443:8443"
+      - "8443:8443"
     volumes:
       - reproxy-ssl:/srv/var/ssl
     environment:
