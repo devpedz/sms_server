@@ -21,8 +21,8 @@ services:
   reproxy:
     image: umputun/reproxy:v1.1.1
     ports:
-      - "3032:8080"
-      - "1443:8443"
+      - "80:8080"
+      - "443:8443"
     volumes:
       - reproxy-ssl:/srv/var/ssl
     environment:
@@ -32,7 +32,7 @@ services:
       - SSL_ACME_FQDN=${DOMAIN}
       - SSL_ACME_LOCATION=/srv/var/ssl
       - STATIC_ENABLED=true
-      - STATIC_RULES=${DOMAIN},^/(.*),http://backend:3030/$$1
+      - STATIC_RULES=${DOMAIN},^/(.*),http://backend:3000/$$1
       - HEADER=
         X-Frame-Options:SAMEORIGIN,
         X-XSS-Protection:1; mode=block;,
@@ -93,7 +93,7 @@ configs:
       gateway:
         mode: private
       http:
-        listen: 0.0.0.0:3030
+        listen: 0.0.0.0:3000
       database:
         host: db
         port: 3306
